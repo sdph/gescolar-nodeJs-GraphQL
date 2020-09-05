@@ -1,0 +1,16 @@
+type Nivel {
+    id: ID!,
+    descricao: String!
+    dataCadastro: String!
+}
+
+type Query {
+    niveis: [Nivel!]!
+    nivel(id: ID!): Nivel!
+}
+
+type Mutation {
+    adicionarNivel(descricao: String!, dataCadastro: String!): Nivel!
+    atualizarNivel(id: ID!, descricao: String!): Nivel!
+    deletarNivel(id: ID!): ID!
+}

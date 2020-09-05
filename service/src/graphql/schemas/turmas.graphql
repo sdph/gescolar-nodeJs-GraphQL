@@ -1,0 +1,31 @@
+type Turma {
+    id: ID!,
+    descricao: String!,
+    identificador: String!,
+    dataCadastro: String!,
+    turnoId: Int!
+}
+
+type Query {
+    turmas: [Turma!]!
+    turma(id: ID!): Turma!
+}
+
+type Mutation {
+    adicionarTurma(
+        descricao: String!,
+        identificador: String!,
+        dataCadastro: String!,
+        turnoId: Int!        
+    ): Turma!
+
+    atualizarTurma(
+        id: ID!,
+        descricao: String!,
+        identificador: String!,
+        dataCadastro: String!,
+        turnoId: Int!        
+    ): Turma!
+
+    deletarTurma(id: ID!): ID!
+}

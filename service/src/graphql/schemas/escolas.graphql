@@ -1,0 +1,25 @@
+type Escola {
+    id: ID!,
+    nome: String!
+    cnpj: String!
+    cep: String
+    endereco: String
+    complemento: String
+    bairro: String
+    cidade: String
+    estado: String
+    telefone: String
+    email: String
+    site: String
+}
+
+type Query {
+    escolas: [Escola!]!
+    escola(id: ID!): Escola!
+}
+
+type Mutation {
+    adicionarEscola(nome: String!, cnpj: String!, cep: String, endereco: String, complemento: String, bairro: String, cidade: String, estado: String, telefone: String, email: String, site: String): Escola!
+    atualizarEscola(id: ID!, nome: String!, cnpj: String!, cep: String, endereco: String, complemento: String, bairro: String, cidade: String, estado: String, telefone: String, email: String, site: String): Escola!
+    deletarEscola(id: ID!): ID!
+}

@@ -1,0 +1,35 @@
+type Pessoa {
+    id: ID!,
+    nome: String!,
+    cpf: String,
+    dataNascimento: String!,
+    sexo: String!,
+    nacionalidade: String,
+    naturalidade: String,
+    categoriaPessoaId: String!,
+    pessoasPaiId: String,
+    pessoasMaeId: String
+
+}
+
+type Query {
+    pessoas: [Pessoa!]!
+    pessoa(id: ID!): Pessoa!
+}
+
+type Mutation {
+    adicionarPessoa(nome: String!, cpf: String, dataNascimento: String!, sexo: String!, nacionalidade: String, naturalidade: String, categoriaPessoaId: String!, pessoasPaiId: String, pessoasMaeId: String): Pessoa!
+    atualizarPessoa(
+            id: ID!,
+            nome: String!,
+            cpf: String,
+            dataNascimento: String!,
+            sexo: String!,
+            nacionalidade: String,
+            naturalidade: String,
+            categoriaPessoaId: Int!,
+            pessoasPaiId: Int,
+            pessoasMaeId: Int
+    ): Pessoa!
+    deletarPessoa(id: ID!): ID!
+}

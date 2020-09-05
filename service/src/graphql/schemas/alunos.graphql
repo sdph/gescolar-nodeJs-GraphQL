@@ -1,0 +1,28 @@
+type Aluno {
+    id: ID!
+    escolaOrigem: String
+    bolsa: String
+    pessoasId: Int!
+}
+
+type Query {
+    alunos: [Aluno!]!
+    aluno(id: ID!): Aluno!
+}
+
+type Mutation {
+    adicionarAluno(
+        escolaOrigem: String,
+        bolsa: String,
+        pessoasId: Int!        
+    ): Aluno!
+ 
+    atualizarAluno(
+        id: ID!,
+        escolaOrigem: String,
+        bolsa: String,
+        pessoasId: Int!        
+    ): Aluno!
+ 
+    deletarAluno(id: ID!): ID!
+}

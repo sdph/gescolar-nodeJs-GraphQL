@@ -1,0 +1,29 @@
+type Serie {
+    id: ID!,
+    identificador: String!,
+    descricao: String,
+    dataCadastro: String!,
+    nivelId: Int!
+}
+
+type Query {
+    series: [Serie!]!
+    serie(id: ID!): Serie!
+}
+
+type Mutation {
+    adicionarSerie(
+        identificador: String!,
+        descricao: String,
+        dataCadastro: String!,
+        nivelId: Int!        
+    ): Serie!
+    atualizarSerie(
+        id: ID!,
+        identificador: String!,
+        descricao: String,
+        dataCadastro: String!,
+        nivelId: Int!
+    ): Serie!
+    deletarSerie(id: ID!): ID!
+}

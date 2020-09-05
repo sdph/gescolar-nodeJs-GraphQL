@@ -1,0 +1,28 @@
+type GradeCurricular {
+    id: ID!,
+    disciplinaId: Int!,
+    anoLetivoId: Int!,
+    seriesId: Int!
+}
+
+type Query {
+    gradesCurriculares: [GradeCurricular!]!
+    gradeCurricular(id: ID!): GradeCurricular!
+}
+
+type Mutation {
+    adicionarGradeCurricular(
+        disciplinaId: Int!,
+        anoLetivoId: Int!,
+        seriesId: Int!        
+    ): GradeCurricular!
+
+    atualizarGradeCurricular(
+        id: ID!,
+        disciplinaId: Int!,
+        anoLetivoId: Int!,
+        seriesId: Int!        
+    ): GradeCurricular!
+    
+    deletarGradeCurricular(id: ID!): ID!
+}

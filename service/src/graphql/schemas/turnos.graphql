@@ -1,0 +1,16 @@
+type Turno {
+    id: ID!,
+    descricao: String!
+    dataCadastro: String!
+}
+
+type Query {
+    turnos: [Turno!]!
+    turno(id: ID!): Turno!
+}
+
+type Mutation {
+    adicionarTurno(descricao: String!, dataCadastro: String!): Turno!
+    atualizarTurno(id: ID!, descricao: String!): Turno!
+    deletarTurno(id: ID!): ID!
+}

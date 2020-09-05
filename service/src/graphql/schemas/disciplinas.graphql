@@ -1,0 +1,16 @@
+type Disciplina {
+    id: ID!,
+    nome: String!,
+    descricao: String!
+}
+
+type Query {
+    disciplinas: [Disciplina!]!
+    disciplina(id: ID!): Disciplina!
+}
+
+type Mutation {
+    adicionarDisciplina(nome: String!, descricao: String!): Disciplina!
+    atualizarDisciplina(id: ID!, nome: String!, descricao: String!): Disciplina!
+    deletarDisciplina(id: ID!): ID!
+}

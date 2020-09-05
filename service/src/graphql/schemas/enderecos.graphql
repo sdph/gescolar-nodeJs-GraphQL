@@ -1,0 +1,21 @@
+type Endereco {
+    id: ID!,
+    cep: String!,
+    endereco: String!,
+    complemento: String,
+    bairro: String!,
+    cidade: String!,
+    estado: String!
+    pessoasId: Int!
+}
+
+type Query {
+    enderecos: [Endereco!]!
+    endereco(id: ID!): Endereco!
+}
+
+type Mutation {
+    adicionarEndereco(cep: String!, endereco: String!, complemento: String!, bairro: String!, cidade: String!, estado: String!, pessoasId: Int!): Endereco!
+    atualizarEndereco(id: ID!, cep: String!, endereco: String!, complemento: String!, bairro: String!, cidade: String!, estado: String!, pessoasId: Int!): Endereco!
+    deletarEndereco(id: ID!): ID!
+}

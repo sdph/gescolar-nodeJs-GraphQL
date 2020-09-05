@@ -1,0 +1,19 @@
+type Documentacao {
+    id: ID!,
+    numero:  String!,
+    observacao: String!,
+    tipoDocumentoId: Int!
+    pessoasId: Int!
+
+}
+
+type Query {
+    documentacoes: [Documentacao!]!
+    documentacao(id: ID!): Documentacao!
+}
+
+type Mutation {
+    adicionarDocumentacao(numero: String!, observacao: String!, tipoDocumentoId: Int!, PessoasId: Int!): Documentacao!
+    atualizarDocumentacao(id: ID!, numero: String!, observacao: String!, tipoDocumentoId: Int!, PessoasId: Int!): Documentacao!
+    deletarDocumentacao(id: ID!): ID!
+}

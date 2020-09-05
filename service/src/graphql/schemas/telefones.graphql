@@ -1,0 +1,19 @@
+type Telefone {
+    id: ID!,
+    dd: String!,
+    numero: String!,
+    tipo: String!,
+    pessoasId: Int!
+    
+}
+
+type Query {
+    telefones: [Telefone!]!
+    telefone(id: ID!): Telefone!
+}
+
+type Mutation {
+    adicionarTelefone(dd: String!, numero: String!, tipo: String!, pessoasId: Int!): Telefone!
+    atualizarTelefone(id: ID!, dd: String!, numero: String!, tipo: String!, pessoasId: Int!): Telefone!
+    deletarTelefone(id: ID!): ID!
+}

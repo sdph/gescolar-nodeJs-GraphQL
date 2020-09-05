@@ -1,0 +1,41 @@
+type Matricula {
+    alunoId: Int!
+    anoLetivoId: Int!
+    descricao: String
+    salaId: Int!
+    serieId: Int!
+    turmaId: Int!
+    gradeCurricularId: Int!
+}
+
+type Query {
+    matriculas: [Matricula!]!
+    matricula(alunoId: Int!, anoLetivoId: Int!): Matricula!
+}
+
+type Mutation {
+    adicionarMatricula(
+        alunoId: Int!,
+        anoLetivoId: Int!,
+        descricao: String,
+        salaId: Int!,
+        serieId: Int!,
+        turmaId: Int!,
+        gradeCurricularId: Int        
+    ): Matricula!
+
+    atualizarMatricula(
+        alunoId: Int!,
+        anoLetivoId: Int!,
+        descricao: String,
+        salaId: Int!,
+        serieId: Int!,
+        turmaId: Int!,
+        gradeCurricularId: Int        
+    ): Matricula!
+
+    deletarMatricula(
+        alunoId: Int!,
+        anoLetivoId: Int!
+    ): Matricula!
+}

@@ -1,0 +1,18 @@
+type AnoLetivo {
+    id: Int!, 
+    primeiroSemestreInicio: String, 
+    primeiroSemestreTermino: String, 
+    segundoSemestreInicio:String, 
+    segundoSemestreTermino:String
+}
+
+type Query {
+    anosLetivos: [AnoLetivo!]!
+    anoLetivo(id: ID!): AnoLetivo!
+}
+
+type Mutation {
+    adicionarAnoLetivo(id: Int!, primeiroSemestreInicio: String, primeiroSemestreTermino: String, SegundoSemestreInicio: String, segundoSemestreTermino: String): AnoLetivo!
+    atualizarAnoLetivo(id: Int!, primeiroSemestreInicio: String, primeiroSemestreTermino: String, SegundoSemestreInicio: String, segundoSemestreTermino: String): AnoLetivo!
+    deletarAnoLetivo(id: ID!): ID!
+}

@@ -1,0 +1,15 @@
+type TipoDocumento {
+    id: ID!,
+    documento: String!
+}
+
+type Query {
+    tiposDocumentos: [TipoDocumento!]!
+    tipoDocumento(id: ID!): TipoDocumento!
+}
+
+type Mutation {
+    adicionarTipoDocumento(documento: String!): TipoDocumento!
+    atualizarTipoDocumento(id: ID!, documento: String!): TipoDocumento!
+    deletarTipoDocumento(id: ID!): ID!
+}

@@ -1,0 +1,35 @@
+type Sala {
+    id: ID!,
+    identificador: String!,
+    descricao: String,
+    dataCadastro: String!,
+    tipoDeSala: String!,
+    capacidade: Int!,
+    instituicaoId: Int!
+}
+
+type Query {
+    salas: [Sala!]!
+    sala(id: ID!): Sala!
+}
+
+type Mutation {
+    adicionarSala(
+        identificador: String!,
+        descricao: String,
+        dataCadastro: String!,
+        tipoDeSala: String!,
+        capacidade: Int!,
+        instituicaoId: Int!      
+    ): Sala!
+    atualizarSala(
+        id: ID!,
+        identificador: String!,
+        descricao: String,
+        dataCadastro: String!,
+        tipoDeSala: String!,
+        capacidade: Int!,
+        instituicaoId: Int!
+    ): Sala!
+    deletarSala(id: ID!): ID!
+}
